@@ -6,6 +6,7 @@
 
 - [[projects/rectar|RecTar]] — RecTar: Store Location Target — Beiersdorf RO facing targets pipeline + Streamlit app + Excel export
 - [[projects/uniqeqagent|UniqEqAgent]] — UniqEqAgent: bay/shelf duplicate-capture detection and cross-visit fixture-identity matching for Trax retail scene data
+- [[projects/ailet-kb|Ailet Discovery KB & Governed-Write Portal]] — CPG/retail discovery content KB (Opportunities/Personas/JTBD/Use Cases) + Next.js/Supabase governed-write portal prototype with shared MCP tools
 
 ## Shipped
 
@@ -21,4 +22,4 @@
 
 ---
 
-*2 entries · Updated 2026-07-20*
+*3 entries · Updated 2026-07-23*

@@ -3,12 +3,13 @@
 Personal wiki of all AI-assisted projects. One page per project.  
 Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
-## Active (2)
+## Active (3)
 
 | Project | Description | Stack | Repo |
 |---------|-------------|-------|------|
 | [RecTar — Store Location Target](projects/rectar.md) | Facing-target calculation pipeline for FMCG clients (Beiersdorf RO) + Streamlit app + Excel export | Python, Pandas, Streamlit, MySQL | [↗](https://github.com/paulalexeevich/RecTar) |
 | [UniqEqAgent](projects/uniqeqagent.md) | Bay/shelf duplicate-capture detection and cross-visit fixture-identity matching for Trax retail scene data | Python, pandas, scikit-learn, MySQL | [↗](https://github.com/paulalexeevich/UniqEqAgent) |
+| [Ailet Discovery KB & Governed-Write Portal](projects/ailet-kb.md) | CPG/retail discovery content KB (Opportunities/Personas/JTBD/Use Cases) + Next.js/Supabase governed-write portal prototype, shared MCP tools | Markdown, Next.js, Supabase, MCP | internal GitLab |
 
 ## Shipped (0)
 
@@ -24,7 +25,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
 ---
 
-*2 entries · Updated 2026-07-20*
+*3 entries · Updated 2026-07-23*
 
 ---
 
