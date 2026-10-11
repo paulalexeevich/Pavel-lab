@@ -4,6 +4,7 @@ name: Promotion test idea
 status: idea
 added: '2026-10-11'
 project: uniqeqagent
+promoted_to_issue: 'https://github.com/paulalexeevich/UniqEqAgent/issues/1'
 ---
 
 # Promotion test idea
