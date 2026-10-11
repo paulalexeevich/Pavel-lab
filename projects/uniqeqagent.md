@@ -14,7 +14,7 @@ infra:
 repo: paulalexeevich/UniqEqAgent
 url: null
 added: 2026-07-20
-updated: 2026-07-20
+updated: 2026-07-23
 ---
 
 # UniqEqAgent
@@ -50,6 +50,7 @@ updated: 2026-07-20
 | Date | What happened |
 |------|---------------|
 | 2026-07-20 | Project scaffolded: reorganized flat `send_to_pavel_similarities/` dump into src/data/models/outputs/legacy layout, extracted hardcoded DB password into env-var config, wrote CLAUDE.md covering both capabilities, git init + GitHub repo + push, desktop launcher created. Ad-hoc cross-visit test (scenes 1904567 vs 1945629, store 329) uncovered the single-probe framing blind spot above. |
+| 2026-07-23 | Built 3 review artifacts (5-random-store spot checks) and found a real bug: the equipment registry's cross-visit union-find clustering transitively bridges unrelated same-visit bays (confirmed on store 2006 — 6 different physical bays fused into one 38-scene_bay "equipment"). Prototyped and validated a fix (1:1 bipartite assignment instead of transitive union-find, scene-scoped equipment identity) — not yet promoted to `src/`. Also found the LCS fingerprint method independently corroborates a case the trained ML model misses (0.021 vs. fingerprint 0.713/33 shared tokens), reinforcing that the model shouldn't be the sole matching signal. Next: combine LCS + lightweight position signals with the new equipment logic into a proper (architect-reviewed) human-review pipeline for 5 stores. |
 
 ## Links
 
