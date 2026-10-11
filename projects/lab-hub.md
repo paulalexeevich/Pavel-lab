@@ -11,10 +11,10 @@ stack:
   - "@modelcontextprotocol/sdk (MCP server)"
   - Telegram Bot API
 infra:
-  - Vercel (pavelpopkov-2586's projects scope)
+  - Vercel (paulalexeevichs-projects scope)
   - GitHub (paulalexeevich/lab-hub)
 repo: paulalexeevich/lab-hub
-url: https://lab-hub-pavelpopkov-2586s-projects.vercel.app
+url: https://lab-hub-vert.vercel.app
 added: 2026-10-11
 updated: 2026-10-11
 ---
@@ -35,13 +35,13 @@ updated: 2026-10-11
 ## Stack & Infra
 
 - **Code**: Next.js/TypeScript, one shared `lib/` core consumed by the UI, the MCP route, and the Telegram/GitHub webhook handlers (no logic duplicated per surface)
-- **Deploy**: Vercel, `pavelpopkov-2586's projects` scope, deployed via `vercel --prod` (GitHub push-to-deploy not yet wired up — Vercel's GitHub App isn't authorized on this account)
+- **Deploy**: Vercel, `paulalexeevichs-projects` scope, GitHub push-to-deploy connected (also deployable manually via `vercel --prod`)
 - **Repo**: [lab-hub](https://github.com/paulalexeevich/lab-hub) (private)
-- **Live**: https://lab-hub-pavelpopkov-2586s-projects.vercel.app (bearer-token gated — see README for required manual setup)
+- **Live**: https://lab-hub-vert.vercel.app (bearer-token + Vercel SSO gated — see README for required manual setup)
 
 ## Status
 
-**ACTIVE** — all 7 user stories (spec `specs/001-ideas-tasks-system`) implemented and pushed. Still needs, before it's actually usable day to day: `GITHUB_TOKEN` set manually (a broad-scope credential, deliberately not auto-provisioned), a Telegram bot created via @BotFather, and GitHub `issues` webhooks registered on each project repo once a stable deployment is live. See `lab-hub/README.md` for exact steps.
+**ACTIVE** — all 7 user stories (spec `specs/001-ideas-tasks-system`) implemented, pushed, and deployed. GitHub `issues` webhooks are registered on every GitHub-hosted catalogued repo. Still needs, before it's fully usable day to day: `GITHUB_TOKEN` set manually (a broad-scope credential, deliberately not auto-provisioned) and a Telegram bot created via @BotFather. See `lab-hub/README.md` for exact steps.
 
 ## Key Decisions
 
@@ -54,10 +54,10 @@ updated: 2026-10-11
 
 | Date | What happened |
 |------|---------------|
-| 2026-10-11 | Full spec→plan→tasks→implement cycle via spec-kit. Repo created, Next.js app scaffolded, all 7 user stories implemented and pushed (47/54 tasks). Remaining: `GITHUB_TOKEN`/Telegram bot manual setup, GitHub webhook registration once deployment is unblocked, final quickstart run-through. |
+| 2026-10-11 | Full spec→plan→tasks→implement cycle via spec-kit. Repo created, Next.js app scaffolded, all 7 user stories implemented and pushed. First deploy attempt landed under the wrong personal Vercel account (`pavelpopkov-2586s-projects`, not connected to the `paulalexeevich` GitHub login) and hit Vercel's Hobby-plan commit-author verification block; re-linked and redeployed under the correct `paulalexeevichs-projects` scope, which auto-connected GitHub push-to-deploy. GitHub `issues` webhooks registered on all 5 GitHub-hosted catalogued repos. 53/54 tasks done — only the full `quickstart.md` run-through remains, pending `GITHUB_TOKEN`. |
 
 ## Links
 
 - GitHub: https://github.com/paulalexeevich/lab-hub
-- Live: https://lab-hub-pavelpopkov-2586s-projects.vercel.app
+- Live: https://lab-hub-vert.vercel.app
 - Handoff: `lab-hub/README.md`
