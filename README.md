@@ -3,21 +3,26 @@
 Personal wiki of all AI-assisted projects. One page per project.  
 Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
-## Active (3)
+## Active (6)
 
 | Project | Description | Stack | Repo |
 |---------|-------------|-------|------|
 | [RecTar — Store Location Target](projects/rectar.md) | Facing-target calculation pipeline for FMCG clients (Beiersdorf RO) + Streamlit app + Excel export | Python, Pandas, Streamlit, MySQL | [↗](https://github.com/paulalexeevich/RecTar) |
 | [UniqEqAgent](projects/uniqeqagent.md) | Bay/shelf duplicate-capture detection and cross-visit fixture-identity matching for Trax retail scene data | Python, pandas, scikit-learn, MySQL | [↗](https://github.com/paulalexeevich/UniqEqAgent) |
 | [Ailet Discovery KB & Governed-Write Portal](projects/ailet-kb.md) | CPG/retail discovery content KB (Opportunities/Personas/JTBD/Use Cases) + Next.js/Supabase governed-write portal prototype, shared MCP tools | Markdown, Next.js, Supabase, MCP | internal GitLab |
+| [Pavel-lab Catalogue](projects/catalogue.md) | The frontmatter-driven markdown wiki (this repo) that catalogues every other vibe-coded project and idea | Markdown, Claude Code skills | [↗](https://github.com/paulalexeevich/Pavel-lab) |
+| [lab-hub (Ideas & Tasks System)](projects/lab-hub.md) | Status overview, cross-project task browser, idea capture, and idea→task promotion system, plus an MCP server and Telegram bot | Next.js, Vercel, Octokit, MCP, Telegram Bot API | [↗](https://github.com/paulalexeevich/lab-hub) |
+| [Retail Analytics](projects/retail-analytics.md) | Cross-source retail data analysis + talk-to-your-data Claude skill (Ailet Data Assistant) + Next.js phantom-stock dashboard (Magnit-analytics) | Python, Claude skill + MCP servers, Next.js | [↗](https://github.com/paulalexeevich/retail-analytics) |
 
 ## Shipped (0)
 
 *None yet.*
 
-## Ideas (0)
+## Ideas (1)
 
-*None yet.*
+| Project | Description | Stack | Repo |
+|---------|-------------|-------|------|
+| [Sku Analyzer](projects/sku-analyzer.md) | — | — | [↗](https://github.com/paulalexeevich/sku-analyzer) |
 
 ## Abandoned (0)
 
@@ -25,7 +30,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
 ---
 
-*3 entries · Updated 2026-07-23*
+*7 entries · Updated 2026-10-11*
 
 ---
 
