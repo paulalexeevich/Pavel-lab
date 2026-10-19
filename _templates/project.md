@@ -8,6 +8,9 @@ stack:
 infra:
   - 
 repo: 
+# taskSource: speckit-registry   # only if this project tracks work via spec-kit
+                                  # tasks.md + docs/REGISTRY.yaml instead of GitHub
+                                  # Issues — lab-hub reads Issues by default.
 url: 
 added: 
 updated: 

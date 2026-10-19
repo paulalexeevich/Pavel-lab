@@ -16,6 +16,7 @@ infra:
   - Supabase (hosted Postgres)
   - Dashboard on Vercel (separate repo: scraper-dashboard)
 repo: paulalexeevich/Scraper-agent
+taskSource: speckit-registry
 url:
 added: 2026-10-19
 updated: 2026-10-19
