@@ -11,6 +11,7 @@
 - [[projects/lab-hub|lab-hub (Ideas & Tasks System)]] — Status overview, cross-project task browser, idea capture, and idea→task promotion system, plus an MCP server and Telegram bot
 - [[projects/retail-analytics|Retail Analytics]] — Cross-source retail data analysis + talk-to-your-data Claude skill + Next.js phantom-stock dashboard
 - [[projects/scraper-agent|Scraper Agent (Retail Product Scraper)]] — Autonomous VPS agent scraping retail product data, migrating core phases onto self-hosted Temporal
+- [[projects/plan-audit-agent|Plan Audit Agent]] — Durable daily agent: checks each catalogued project's commits against its plan, writes findings to a lab-hub-audit branch, sends a Telegram digest
 
 ## Shipped
 
@@ -26,4 +27,4 @@
 
 ---
 
-*8 entries · Updated 2026-10-19*
+*9 entries · Updated 2026-11-01*
