@@ -14,7 +14,7 @@ infra:
 repo: paulalexeevich/plan-audit-agent
 url:
 added: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-03
 ---
 
 # Plan Audit Agent
@@ -28,6 +28,7 @@ updated: 2026-11-01
 - Classifies aligned / minor_drift / major_drift via a one-shot `pi-ai` call (provider configurable, defaults to Anthropic — not locked to one provider)
 - Writes the day's finding to the project's own `lab-hub-audit` branch — structurally the only branch this agent can ever write to (see repo README's "Safety boundary")
 - Sends one consolidated Telegram message per day
+- Records every classification call's full prompt + raw response as a durable trace, browsable in a built-in web UI (`:8787`, bearer-token gated) where each trace can be marked correct/incorrect with a note
 
 ## Stack & Infra
 
@@ -38,7 +39,7 @@ updated: 2026-11-01
 
 ## Status
 
-**ACTIVE** — initial implementation complete (typecheck, build, and 6/6 tests pass against the real installed `pi-ai`/`pi-durable` packages). Not yet run against live credentials or deployed. `pi-ai`/`pi-durable` are both marked experimental upstream (v1.4.0); the scheduler deliberately uses only `pi-durable`'s simplest primitive (`defineDoc`) rather than its task/`sleepUntil` API to minimize dependence on that experimental surface.
+**ACTIVE** — implementation complete including the trace UI (typecheck, build, and 11/11 tests pass against the real installed `pi-ai`/`pi-durable` packages; `tests/traces.test.ts` runs against real `pi-durable` in-memory storage, not mocks). Not yet run against live credentials or deployed. `pi-ai`/`pi-durable` are both marked experimental upstream (v1.4.0); the scheduler and trace storage deliberately use only `pi-durable`'s simplest primitives (`defineDoc`, one conversation per trace) rather than its task/`sleepUntil`/generation-and-tool-execution API, to minimize dependence on that experimental surface.
 
 ## Key Decisions
 
@@ -48,12 +49,15 @@ updated: 2026-11-01
 - `pi-ai` (not a direct Anthropic SDK call) for the model layer, specifically so the provider isn't locked to Anthropic
 - SQLite (via `pi-durable`'s official Node support) for durable state, not DuckDB — DuckDB was considered but dropped: `pi-durable`'s internal migrations use SQLite-specific DDL (e.g. `STRICT` tables) that DuckDB doesn't support, and patching an experimental dependency's internals was judged too fragile
 - lab-hub's own daily digest cron is left running in parallel for now (temporary, intentional overlap) until this agent has run reliably for a few days
+- Traces stored as one `pi-durable` conversation per classification call (custom `TraceDoc`), not routed through `pi-durable`'s generation/tool-execution flow — keeps the trace feature on the same minimal-surface footing as the scheduler
+- Eval UI is deliberately simple (correct/incorrect + free-text note), not a scoring rubric — the goal is a running record of "was the agent right," not a benchmark
 
 ## Sessions
 
 | Date | What happened |
 |------|---------------|
 | 2026-11-01 | Built from scratch in one session: repo created, full implementation (catalogue read, GitHub commit/branch access, self-report read, pi-ai plan-check, pi-durable schedule, Telegram send), Dockerfile/compose/README for VPS deployment. Catalogued here. Not yet deployed. |
+| 2026-11-03 | Added trace UI: `src/traces.ts` durably records each plan-check call's full prompt/response as a `pi-durable` conversation; `src/server.ts` (bearer-token-gated Express app, shares the harness with the schedule) serves a plain-JS page to browse traces and mark correct/incorrect with a note. Still not yet deployed. |
 
 ## Links
 
