@@ -12,6 +12,7 @@
 - [[projects/retail-analytics|Retail Analytics]] — Cross-source retail data analysis + talk-to-your-data Claude skill + Next.js phantom-stock dashboard
 - [[projects/scraper-agent|Scraper Agent (Retail Product Scraper)]] — Autonomous VPS agent scraping retail product data, migrating core phases onto self-hosted Temporal
 - [[projects/plan-audit-agent|Plan Audit Agent]] — Durable daily agent: checks each catalogued project's commits against its plan, writes findings to a lab-hub-audit branch, sends a Telegram digest
+- [[projects/timestral-magnit-forecast|Timestral Magnit Forecast]] — One-shot test of Mistral's Timestral time-series model on real Magnit daily sales data (1 store, 3 SKUs), forecast vs. actuals
 
 ## Shipped
 
@@ -27,4 +28,4 @@
 
 ---
 
-*9 entries · Updated 2026-11-01*
+*10 entries · Updated 2026-11-05*

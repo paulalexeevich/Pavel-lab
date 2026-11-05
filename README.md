@@ -3,7 +3,7 @@
 Personal wiki of all AI-assisted projects. One page per project.  
 Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
-## Active (8)
+## Active (9)
 
 | Project | Description | Stack | Repo |
 |---------|-------------|-------|------|
@@ -15,6 +15,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 | [Retail Analytics](projects/retail-analytics.md) | Cross-source retail data analysis + talk-to-your-data Claude skill (Ailet Data Assistant) + Next.js phantom-stock dashboard (Magnit-analytics) | Python, Claude skill + MCP servers, Next.js | [↗](https://github.com/paulalexeevich/retail-analytics) |
 | [Scraper Agent (Retail Product Scraper)](projects/scraper-agent.md) | Autonomous VPS agent scraping retail product data across countries; core phases migrating onto self-hosted Temporal | Python, Temporal, Supabase, Playwright/Camoufox, Gemini | [↗](https://github.com/paulalexeevich/Scraper-agent) |
 | [Plan Audit Agent](projects/plan-audit-agent.md) | Durable daily agent: checks each catalogued project's commits against its plan, writes findings to a lab-hub-audit branch, sends a Telegram digest | TypeScript, pi-ai, pi-durable, Octokit | [↗](https://github.com/paulalexeevich/plan-audit-agent) |
+| [Timestral Magnit Forecast](projects/timestral-magnit-forecast.md) | One-shot test of Mistral's Timestral time-series model on real Magnit daily sales data (1 store, 3 SKUs): forecast month 3 from the first two, compare vs. actuals | Python, pandas, mistralai/timestral | local only |
 
 ## Shipped (0)
 
@@ -32,7 +33,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
 ---
 
-*9 entries · Updated 2026-11-01*
+*10 entries · Updated 2026-11-05*
 
 ---
 
