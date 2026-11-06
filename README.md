@@ -3,7 +3,7 @@
 Personal wiki of all AI-assisted projects. One page per project.  
 Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
-## Active (9)
+## Active (10)
 
 | Project | Description | Stack | Repo |
 |---------|-------------|-------|------|
@@ -16,6 +16,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 | [Scraper Agent (Retail Product Scraper)](projects/scraper-agent.md) | Autonomous VPS agent scraping retail product data across countries; core phases migrating onto self-hosted Temporal | Python, Temporal, Supabase, Playwright/Camoufox, Gemini | [↗](https://github.com/paulalexeevich/Scraper-agent) |
 | [Plan Audit Agent](projects/plan-audit-agent.md) | Durable daily agent: checks each catalogued project's commits against its plan, writes findings to a lab-hub-audit branch, sends a Telegram digest | TypeScript, pi-ai, pi-durable, Octokit | [↗](https://github.com/paulalexeevich/plan-audit-agent) |
 | [Timestral Magnit Forecast](projects/timestral-magnit-forecast.md) | One-shot test of Mistral's Timestral time-series model on real Magnit daily sales data (1 store, 3 SKUs): forecast month 3 from the first two, compare vs. actuals | Python, pandas, mistralai/timestral | local only |
+| [PlanoAgent-RL](projects/planoagent-rl.md) | RL + deterministic tree-packer hybrid for Hair Care (P&G) planogram generation, fine-tunable on merchandiser feedback | Python, Stable-Baselines3 (MaskablePPO), FastAPI, Streamlit, Supabase | [↗](https://github.com/paulalexeevich/PlanoAgent-RL) |
 
 ## Shipped (0)
 
@@ -33,7 +34,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
 ---
 
-*10 entries · Updated 2026-11-05*
+*11 entries · Updated 2026-11-06*
 
 ---
 
