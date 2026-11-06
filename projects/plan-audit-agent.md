@@ -14,7 +14,7 @@ infra:
 repo: paulalexeevich/plan-audit-agent
 url:
 added: 2026-11-01
-updated: 2026-11-03
+updated: 2026-11-06
 ---
 
 # Plan Audit Agent
@@ -33,13 +33,19 @@ updated: 2026-11-03
 ## Stack & Infra
 
 - **Code**: TypeScript/Node, single long-running process (not serverless — needs a persistent local SQLite file for durable state)
-- **Deploy**: Docker Compose on its own dedicated VPS, not yet provisioned — see repo README for the full setup guide
+- **Deploy**: Docker Compose on its own dedicated VPS
 - **Repo**: [plan-audit-agent](https://github.com/paulalexeevich/plan-audit-agent) (private)
-- **Live**: not deployed yet — code and deployment guide are ready; awaiting a VPS
+- **Live**: deployed and running a daily cron — confirmed 2026-11-06 via a real Telegram digest received
 
 ## Status
 
-**ACTIVE** — implementation complete including the trace UI (typecheck, build, and 11/11 tests pass against the real installed `pi-ai`/`pi-durable` packages; `tests/traces.test.ts` runs against real `pi-durable` in-memory storage, not mocks). Not yet run against live credentials or deployed. `pi-ai`/`pi-durable` are both marked experimental upstream (v1.4.0); the scheduler and trace storage deliberately use only `pi-durable`'s simplest primitives (`defineDoc`, one conversation per trace) rather than its task/`sleepUntil`/generation-and-tool-execution API, to minimize dependence on that experimental surface.
+**ACTIVE** — deployed and running. Confirmed live 2026-11-06: sent a real daily Telegram digest
+(`📊 Что сделано за сутки`) covering catalogued-project commits, matching `src/audit.ts` exactly. Uses its
+own Telegram bot, separate from lab-hub's — now being consolidated to one shared bot (see Key Decisions).
+`pi-ai`/`pi-durable` are both marked experimental upstream (v1.4.0); the scheduler and trace storage
+deliberately use only `pi-durable`'s simplest primitives (`defineDoc`, one conversation per trace) rather
+than its task/`sleepUntil`/generation-and-tool-execution API, to minimize dependence on that experimental
+surface.
 
 ## Key Decisions
 
@@ -48,7 +54,7 @@ updated: 2026-11-03
 - Writes only ever land on each monitored repo's `lab-hub-audit` branch, never `main` — merging a finding into `main` is left as a deliberate human action
 - `pi-ai` (not a direct Anthropic SDK call) for the model layer, specifically so the provider isn't locked to Anthropic
 - SQLite (via `pi-durable`'s official Node support) for durable state, not DuckDB — DuckDB was considered but dropped: `pi-durable`'s internal migrations use SQLite-specific DDL (e.g. `STRICT` tables) that DuckDB doesn't support, and patching an experimental dependency's internals was judged too fragile
-- lab-hub's own daily digest cron is left running in parallel for now (temporary, intentional overlap) until this agent has run reliably for a few days
+- lab-hub's own daily digest cron ran in parallel temporarily until this agent proved reliable; disabled 2026-11-06 in favor of this agent's digest, consolidating both projects onto one shared Telegram bot
 - Traces stored as one `pi-durable` conversation per classification call (custom `TraceDoc`), not routed through `pi-durable`'s generation/tool-execution flow — keeps the trace feature on the same minimal-surface footing as the scheduler
 - Eval UI is deliberately simple (correct/incorrect + free-text note), not a scoring rubric — the goal is a running record of "was the agent right," not a benchmark
 
@@ -58,6 +64,7 @@ updated: 2026-11-03
 |------|---------------|
 | 2026-11-01 | Built from scratch in one session: repo created, full implementation (catalogue read, GitHub commit/branch access, self-report read, pi-ai plan-check, pi-durable schedule, Telegram send), Dockerfile/compose/README for VPS deployment. Catalogued here. Not yet deployed. |
 | 2026-11-03 | Added trace UI: `src/traces.ts` durably records each plan-check call's full prompt/response as a `pi-durable` conversation; `src/server.ts` (bearer-token-gated Express app, shares the harness with the schedule) serves a plain-JS page to browse traces and mark correct/incorrect with a note. Still not yet deployed. |
+| 2026-11-06 | Confirmed actually deployed and running (catalogue entry had gone stale) — received its real daily Telegram digest. Disabled lab-hub's redundant digest cron and started consolidating both projects onto this agent's Telegram bot as the single shared bot. |
 
 ## Links
 

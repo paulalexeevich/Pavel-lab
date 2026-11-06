@@ -16,7 +16,7 @@ infra:
 repo: paulalexeevich/lab-hub
 url: https://lab-hub-vert.vercel.app
 added: 2026-10-11
-updated: 2026-10-11
+updated: 2026-11-06
 ---
 
 # lab-hub (Ideas & Tasks System)
@@ -30,7 +30,7 @@ updated: 2026-10-11
 - Explicit, idempotent idea→task promotion: one confirmed action creates exactly one GitHub Issue and records it back on the idea file — never silently, never twice
 - Cross-project and per-project task browsing
 - MCP server (`/api/mcp`) exposing `list_projects`, `list_ideas`, `list_tasks`, `create_idea`, `promote_idea_to_task` to agents, with the same explicit-confirmation rules as the UI
-- Telegram bot: idea-capture command plus notifications (idea captured, task created/closed via GitHub webhook, periodic digest via Vercel Cron)
+- Telegram bot: idea-capture command plus notifications (idea captured, task created/closed via GitHub webhook). Its own periodic digest cron is disabled (2026-11-06) — `plan-audit-agent` sends the daily digest instead
 
 ## Stack & Infra
 
@@ -45,6 +45,10 @@ updated: 2026-10-11
 
 ## Key Decisions
 
+- Daily digest cron (`/api/cron/digest`) disabled 2026-11-06 — `plan-audit-agent`'s digest covers the same
+  ground and was confirmed working; the two were only ever meant to overlap temporarily. lab-hub's bot is
+  being migrated to the same `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` as `plan-audit-agent` so there's one
+  shared bot instead of two
 - No database anywhere — Pavel-lab's markdown catalogue and each project's GitHub Issues are read/written live via their APIs (Pavel-lab Constitution I & II)
 - Every catalogued project gets its own GitHub repo as task backend (no shared aggregator repo) — except `ailet-kb`, whose existing GitLab repo is treated as a permanent, legitimate "no tasks tracked" state rather than migrated
 - Single shared bearer token for UI + MCP auth (no multi-user system) — a personal, single-user tool
@@ -55,6 +59,7 @@ updated: 2026-10-11
 | Date | What happened |
 |------|---------------|
 | 2026-10-11 | Full spec→plan→tasks→implement cycle via spec-kit. Repo created, Next.js app scaffolded, all 7 user stories implemented and pushed. First deploy attempt landed under the wrong personal Vercel account (`pavelpopkov-2586s-projects`, not connected to the `paulalexeevich` GitHub login) and hit Vercel's Hobby-plan commit-author verification block; re-linked and redeployed under the correct `paulalexeevichs-projects` scope, which auto-connected GitHub push-to-deploy. GitHub `issues` webhooks registered on all 5 GitHub-hosted catalogued repos. 53/54 tasks done — only the full `quickstart.md` run-through remains, pending `GITHUB_TOKEN`. |
+| 2026-11-06 | Discovered `plan-audit-agent` was actually deployed (its catalogue entry was stale) and already sending a working daily digest. Disabled lab-hub's own digest cron to avoid duplicate messages from two bots; consolidating both projects onto one shared Telegram bot (`plan-audit-agent`'s). |
 
 ## Links
 
