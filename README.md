@@ -3,7 +3,7 @@
 Personal wiki of all AI-assisted projects. One page per project.  
 Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
-## Active (10)
+## Active (11)
 
 | Project | Description | Stack | Repo |
 |---------|-------------|-------|------|
@@ -17,6 +17,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 | [Plan Audit Agent](projects/plan-audit-agent.md) | Durable daily agent: checks each catalogued project's commits against its plan, writes findings to a lab-hub-audit branch, sends a Telegram digest | TypeScript, pi-ai, pi-durable, Octokit | [↗](https://github.com/paulalexeevich/plan-audit-agent) |
 | [Timestral Magnit Forecast](projects/timestral-magnit-forecast.md) | One-shot test of Mistral's Timestral time-series model on real Magnit daily sales data (1 store, 3 SKUs): forecast month 3 from the first two, compare vs. actuals | Python, pandas, mistralai/timestral | local only |
 | [PlanoAgent-RL](projects/planoagent-rl.md) | RL + deterministic tree-packer hybrid for Hair Care (P&G) planogram generation, fine-tunable on merchandiser feedback | Python, Stable-Baselines3 (MaskablePPO), FastAPI, Streamlit, Supabase | [↗](https://github.com/paulalexeevich/PlanoAgent-RL) |
+| [Dedup Demo](projects/dedup-demo.md) | Open-source demo: OpenSearch candidate retrieval + Pi Durable LLM de-duplication agent, plus a human-review UI | TypeScript, pi-ai, pi-durable, OpenSearch, Next.js | [↗](https://github.com/paulalexeevich/dedup-demo) |
 
 ## Shipped (0)
 
@@ -34,7 +35,7 @@ Open in [Obsidian](https://obsidian.md) for graph view and linked navigation.
 
 ---
 
-*11 entries · Updated 2026-11-06*
+*12 entries · Updated 2026-11-12*
 
 ---
 
