@@ -15,6 +15,7 @@
 - [[projects/timestral-magnit-forecast|Timestral Magnit Forecast]] — One-shot test of Mistral's Timestral time-series model on real Magnit daily sales data (1 store, 3 SKUs), forecast vs. actuals
 - [[projects/planoagent-rl|PlanoAgent-RL]] — RL + deterministic tree-packer hybrid for Hair Care (P&G) planogram generation, fine-tunable on merchandiser feedback
 - [[projects/dedup-demo|Dedup Demo]] — Open-source demo: OpenSearch + Pi Durable product de-duplication agent plus a human-review UI
+- [[projects/landing-agent|Landing Agent]] — Generates marketing landing pages for new products, with animated demo sections built via the Stageshow skill
 
 ## Shipped
 
@@ -30,4 +31,4 @@
 
 ---
 
-*12 entries · Updated 2026-11-12*
+*13 entries · Updated 2026-11-16*
